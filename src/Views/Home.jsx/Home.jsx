@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import BestSelling from "../../Components/Best Selling Product/BestSelling";
 import Sale from "../../Components/Sale/Sale";
 import { useNavigate } from "react-router-dom";
+import banner from "../../assets/banner.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Home = () => {
       <div className=" relative w-full h-screen overflow-hidden">
         <img
           className="w-full h-full object-cover"
-          src="https://www.sleeplessmedia.com/wp-content/uploads/2010/09/extensive-ecommerce-banner.jpg"
+          src={banner}
           alt="E-commerce Banner"
         />
         <div className="absolute  inset-0 flex items-center justify-center bg-black bg-opacity-40">
