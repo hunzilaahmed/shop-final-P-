@@ -14,7 +14,7 @@ const BestSelling = () => {
       image:
         "https://www.pixelstalk.net/wp-content/uploads/images6/Awesome-BMW-Wallpaper-HD.jpg",
       description:
-        "The BMW Group is the world's leading provider of premium cars and motorcycles and  of resources.",
+        "The BMW Group is the world's leading provider of premium cars and motorcycles and of resources.",
     },
     {
       title: "Cat",
@@ -28,11 +28,11 @@ const BestSelling = () => {
     <section className="mt-12">
       <div className="flex flex-col items-center">
         <div className="flex items-center mb-6">
-          <div className="w-28 sm:w-32 md:w-40 mr-4 sm:mr-6 md:mr-9 h-1 bg-gray-700 rounded-2xl"></div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 transition-transform duration-300 transform hover:scale-105">
+          <div className="w-20 sm:w-28 md:w-40 h-1 bg-gray-700 rounded-2xl"></div>
+          <h1 className="mx-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 transition-transform duration-300 transform hover:scale-105">
             Featured Products
           </h1>
-          <div className="w-28 sm:w-32 md:w-40 ml-4 sm:ml-6 md:ml-9 h-1 bg-gray-700 rounded-2xl"></div>
+          <div className="w-20 sm:w-28 md:w-40 h-1 bg-gray-700 rounded-2xl"></div>
         </div>
 
         <p className="text-gray-600 text-center max-w-xl">
@@ -41,11 +41,11 @@ const BestSelling = () => {
         </p>
       </div>
 
-      <div className=" mt-8 mx-auto grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 ">
+      <div className="mt-8 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
         {products.map((product, index) => (
           <div
             key={index}
-            className="w-full mx-auto md:w-72 lg:w-80 rounded-lg shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105"
+            className="w-full mx-auto rounded-lg shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105"
           >
             <img
               src={product.image}

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../../FireBase/firebase";
 import { removeProduct } from "../../Redux/cartSlice";
+import shop from "../../assets/shop.png";
 
 const NavBar = () => {
   const user = useSelector((state) => state.userData.uid);
@@ -33,18 +34,18 @@ const NavBar = () => {
 
   return (
     <nav className="py-3 text-black px-4 md:px-10 relative">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center flex-wrap">
         <div className="flex items-center space-x-4">
-          <img src={logo} alt="Logo 1" className="w-28 h-auto" />
+          <img src={logo} alt="Logo" className="w-24 h-auto md:w-28" />
           <img
             onClick={goToHome}
-            src="https://seeklogo.com/images/1/shop-logo-C0083F2CCF-seeklogo.com.png"
-            alt="Logo 2"
-            className="w-40 cursor-pointer h-auto"
+            src={shop}
+            alt="Shop"
+            className="w-32 h-auto cursor-pointer md:w-40"
           />
         </div>
 
-        <div className="hidden md:flex space-x-10">
+        <div className="md:flex md:space-x-10 hidden">
           <div
             onClick={goToHome}
             className="hover:text-black flex cursor-pointer"
@@ -68,13 +69,8 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 relative">
-          <button
-            onClick={goToAddProduct}
-            className="bg-red-500 text-white py-2 px-4 rounded transition hover:scale-105 hover:bg-slate-100 hover:text-zinc-900 duration-300"
-          >
-            Upload Products
-          </button>
+        <div className="flex items-center space-x-4">
+          <div className="hidden md:flex"></div>
           {user ? (
             <button
               onClick={logout}
@@ -104,8 +100,7 @@ const NavBar = () => {
               </div>
               {cartIsOpen && (
                 <div className="absolute right-0 bg-white border border-gray-300 rounded-lg shadow-lg p-4 mt-2 w-64 z-10">
-                  <img src={logo} alt="Logo 1" className="w-28 h-auto" />
-
+                  <img src={logo} alt="Logo" className="w-24 h-auto md:w-28" />
                   {cartItems.length > 0 ? (
                     <ul className="space-y-2">
                       {cartItems.map((item, index) => (
@@ -142,7 +137,7 @@ const NavBar = () => {
             </div>
           )}
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} aria-label="Toggle Menu">
               {isOpen ? <MdClose size={28} /> : <MdMenu size={28} />}
             </button>
@@ -167,13 +162,20 @@ const NavBar = () => {
             <MdOutlineArrowDropDown className="ml-1" />
           </div>
           <div
+            onClick={goToAddProduct}
+            className="hover:text-black flex justify-center cursor-pointer"
+          >
+            Upload Products
+            <MdOutlineArrowDropDown className="ml-1" />
+          </div>
+          <div
             onClick={goToContact}
             className="hover:text-black flex justify-center cursor-pointer"
           >
             Contact Us
             <MdOutlineArrowDropDown className="ml-1" />
           </div>
-          {user && (
+          {/* {user && (
             <div
               onClick={logout}
               className="hover:text-black flex justify-center cursor-pointer"
@@ -190,11 +192,11 @@ const NavBar = () => {
               Login
               <MdOutlineArrowDropDown className="ml-1" />
             </div>
-          )}
+          )} */}
         </div>
       )}
 
-      <div className="text-blue-900 text-xs mt-1">
+      <div className="text-blue-900 text-xs mt-1 hidden md:block">
         <p>{userEmail}</p>
       </div>
     </nav>
