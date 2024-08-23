@@ -60,8 +60,8 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <div className="hidden md:flex">
+        <div className="flex items-center justify-end space-x-4">
+          <div className="hidden  md:flex">
             <button
               onClick={goToAddProduct}
               className="bg-red-500 text-white py-2 px-4 rounded transition hover:scale-105 hover:bg-slate-100 hover:text-zinc-900 duration-300"
