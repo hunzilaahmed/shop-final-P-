@@ -26,7 +26,7 @@ const BestSelling = () => {
 
   return (
     <section className="mt-12">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-center">
         <div className="flex items-center mb-6">
           <div className="w-20 sm:w-28 md:w-40 h-1 bg-gray-700 rounded-2xl"></div>
           <h1 className="mx-4 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 transition-transform duration-300 transform hover:scale-105">
@@ -34,7 +34,6 @@ const BestSelling = () => {
           </h1>
           <div className="w-20 sm:w-28 md:w-40 h-1 bg-gray-700 rounded-2xl"></div>
         </div>
-
         <p className="text-gray-600 text-center max-w-xl">
           Discover our best-selling products that are loved by customers for
           their quality and value.

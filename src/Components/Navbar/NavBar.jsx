@@ -46,36 +46,26 @@ const NavBar = () => {
         </div>
 
         <div className="md:flex md:space-x-10 hidden">
-          <div
-            onClick={goToHome}
-            className="hover:text-black flex cursor-pointer"
-          >
+          <div onClick={goToHome} className="hover:text-black flex cursor-pointer">
             Home
             <MdOutlineArrowDropDown className="mt-[6px]" />
           </div>
-          <div
-            onClick={goToProducts}
-            className="hover:text-black flex cursor-pointer"
-          >
+          <div onClick={goToProducts} className="hover:text-black flex cursor-pointer">
             Products
             <MdOutlineArrowDropDown className="mt-[6px]" />
           </div>
-          <div
-            onClick={goToContact}
-            className="hover:text-black flex cursor-pointer"
-          >
+          <div onClick={goToContact} className="hover:text-black flex cursor-pointer">
             Contact Us
             <MdOutlineArrowDropDown className="mt-[6px]" />
           </div>
-          
         </div>
 
         <div className="flex items-center space-x-4">
           <div className="hidden md:flex">
-          <button
+            <button
               onClick={goToAddProduct}
               className="bg-red-500 text-white py-2 px-4 rounded transition hover:scale-105 hover:bg-slate-100 hover:text-zinc-900 duration-300"
-              aria-label="Logout"
+              aria-label="Upload Products"
             >
               UPLOAD PRODUCTS
             </button>
@@ -100,10 +90,7 @@ const NavBar = () => {
 
           {user && (
             <div className="relative">
-              <div
-                className="flex items-center cursor-pointer"
-                onClick={toggleCart}
-              >
+              <div className="flex items-center cursor-pointer" onClick={toggleCart}>
                 <TbShoppingBagCheck size={25} />
                 <span className="ml-1 text-sm">{cartItems.length}</span>
               </div>
@@ -119,15 +106,9 @@ const NavBar = () => {
                         >
                           <div className="flex-1">
                             <h4 className="font-medium">{item.tittle}</h4>
-                            <p className="text-sm text-gray-500">
-                              {item.description}
-                            </p>
+                            <p className="text-sm text-gray-500">{item.description}</p>
                           </div>
-                          <img
-                            src={item.image}
-                            alt=""
-                            className="w-12 h-12 ml-2 object-cover rounded-lg"
-                          />
+                          <img src={item.image} alt="" className="w-12 h-12 ml-2 object-cover rounded-lg" />
                           <button
                             onClick={() => dispatch(removeProduct(index))}
                             className="ml-2 text-red-500 hover:text-red-700"
@@ -156,52 +137,34 @@ const NavBar = () => {
 
       {isOpen && (
         <div className="md:hidden flex flex-col space-y-4 mt-4">
-          <div
-            onClick={goToHome}
-            className="hover:text-black flex justify-center cursor-pointer"
-          >
+          <div onClick={goToHome} className="hover:text-black flex justify-center cursor-pointer">
             Home
             <MdOutlineArrowDropDown className="ml-1" />
           </div>
-          <div
-            onClick={goToProducts}
-            className="hover:text-black flex justify-center cursor-pointer"
-          >
+          <div onClick={goToProducts} className="hover:text-black flex justify-center cursor-pointer">
             Products
             <MdOutlineArrowDropDown className="ml-1" />
           </div>
-          <div
-            onClick={goToAddProduct}
-            className="hover:text-black flex justify-center cursor-pointer"
-          >
+          <div onClick={goToAddProduct} className="hover:text-black flex justify-center cursor-pointer">
             Upload Products
             <MdOutlineArrowDropDown className="ml-1" />
           </div>
-          <div
-            onClick={goToContact}
-            className="hover:text-black flex justify-center cursor-pointer"
-          >
+          <div onClick={goToContact} className="hover:text-black flex justify-center cursor-pointer">
             Contact Us
             <MdOutlineArrowDropDown className="ml-1" />
           </div>
-          {/* {user && (
-            <div
-              onClick={logout}
-              className="hover:text-black flex justify-center cursor-pointer"
-            >
+          {user && (
+            <div onClick={logout} className="hover:text-black flex justify-center cursor-pointer">
               Logout
               <MdOutlineArrowDropDown className="ml-1" />
             </div>
           )}
           {!user && (
-            <div
-              onClick={goToLogin}
-              className="hover:text-black flex justify-center cursor-pointer"
-            >
+            <div onClick={goToLogin} className="hover:text-black flex justify-center cursor-pointer">
               Login
               <MdOutlineArrowDropDown className="ml-1" />
             </div>
-          )} */}
+          )}
         </div>
       )}
 
